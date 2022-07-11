@@ -1464,14 +1464,22 @@ const countryDetails = [
     },
   ];
 // Array containing country details ends here 
-  
-countryDetails.sort(() => 0.5 - Math.random());
-randomPosition = Math.floor(Math.random() * countryDetails.length);
-let countryCapital = countryDetails[randomPosition].country;
-let answer = countryDetails[randomPosition].capital;
-let countryCode = countryDetails[randomPosition].code;
-let flag = "png100px/" + countryDetails[randomPosition].flag;
 
+let randomPosition;
+let countryCapital;
+let answer;
+let countryCode;
+let flag;
+function renderGame() {
+  countryDetails.sort(() => 0.5 - Math.random());
+  randomPosition = Math.floor(Math.random() * countryDetails.length);
+  countryCapital = countryDetails[randomPosition].country;
+  answer = countryDetails[randomPosition].capital;
+  countryCode = countryDetails[randomPosition].code;
+  flag = "png100px/" + countryDetails[randomPosition].flag;
+}
+
+renderGame();
 let options = [answer];
 function getOptions(answer) {
   while (options.length < 4) {
@@ -1565,11 +1573,8 @@ function checkAnswer(e) {
   });
 
   answeredQuestions.innerText = questionCounter;
-  randomPosition = Math.floor(Math.random() * countryDetails.length);
-  countryCapital = countryDetails[randomPosition].country;
-  answer = countryDetails[randomPosition].capital;
-  countryCode = countryDetails[randomPosition].code;
-  flag = "png100px/" + countryDetails[randomPosition].flag;
+  
+  renderGame();
   
   options = null;
   options = [answer];
