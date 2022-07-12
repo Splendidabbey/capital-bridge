@@ -948,12 +948,12 @@ const countryDetails = [
       code: "NF",
       flag: "nf.png"
     },
-    // {
-    //   country: "North Korea",
-    //   capital: "Pyongyang",
-    //   code: "NILL",
-    //   flag: "nill.png"
-    // },
+    {
+      country: "North Korea",
+      capital: "Pyongyang",
+      code: "KP",
+      flag: "kp.png"
+    },
     {
       country: "Northern Ireland",
       capital: "Belfast",
@@ -1206,12 +1206,12 @@ const countryDetails = [
     //   code: "GS",
     //   flag: "gs.png"
     // },
-    // {
-    //   country: "South Korea",
-    //   capital: "Seoul",
-    //   code: "SA",
-    //   flag: "sa.png"
-    // },return
+    {
+      country: "South Korea",
+      capital: "Seoul",
+      code: "KR",
+      flag: "kr.png"
+    },
     {
       country: "South Sudan",
       capital: "Juba",
