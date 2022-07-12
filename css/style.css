@@ -14,6 +14,49 @@ body {
     margin: 0 auto 214px;
     border-radius: 10px 10px 10px 0px;
 }
+.game-info {
+    display: block;
+    background: rgba(7, 7, 7, 0.72);
+    padding: 5px 20px 30px;
+    width: 95%;
+    max-width: 500px;
+    margin: 0 auto 214px;
+    border-radius: 10px 10px 10px 0px;
+}
+#btn-play-again{
+    border: 1px solid #000;
+    border-radius: 50px;
+    width: 57%;
+    padding: 10px 20px;
+    background: rgb(247, 206, 206);
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+#game-over {
+    
+    animation: shine 2s infinite;
+}
+@keyframes shine {
+    0% {
+        color: white;
+    }
+    25% {
+        color: white;
+    }
+    50% {
+        color: rgb(0, 0, 0);
+    }
+    75% {
+        color: rgb(255, 251, 251)
+    }
+    100% {
+        color: rgb(228, 222, 222)
+    }
+}
 #score-counter {
     display: flex;
     border-radius: 8px;

@@ -1,28 +1,10 @@
 # CapitalBridge
-Built with HTML, CSS, and JS. A quiz game that assist in learning Country capitals, flags, and shortcode at a go.
+Built with HTML, CSS, and JS. A quiz game that assist in learning country capitals, flags, and shortcode at a go.
 
-This repository contains accurate renders of all the worlds flags in SVG and PNG format.
+This repository contains renders of all the countries flags in PNG format, gotten from https://hampusborgos.github.io/country-flags/. Country Capitals, shortcode, flags were also taken from Wikipedia and google search results.
 
-View all of the flags here: https://hampusborgos.github.io/country-flags/
+The flags are not under copyright protection since flags are in public domain (there may be other restrictions on how the flag can be used though).
 
-We make every effort to maintain the most accurate repository of flags. That is, flags that most closely match what the country or territory's laws and regulations describe the flags as being.
+I made every effort to maintain the most accurate data for each country, but this data may contain some mistakes and misinterpretations. The countryDetails array contains 233 country data represented in objects. It also contained some coutries data that were commented out due to incomplete data.
 
-The source files were taken from Wikimedia Commons and sometimes contributed back
-(when the country legislation more accurately describes what the flag should
-look like). The flags are not under copyright protection since flags are in public
-domain (there may be other restrictions on how the flag can be used though).
-
-
-## Flags are organized by "ISO country-code"
-
-The flags are named by their 2-letter ISO-3166 country code, except for the
-constituent countries of Great Britain which have 6-letter codes "GB-ENG" etc).
-
-Kosovo uses the user-assigned country code `XK`, which is not part of the ISO standard, but in use by several multinational organizations.
-
-Also included is a JSON file that maps the ISO country code to the name of the
-country.
-
-## Acknowledgements
-This repository contains accurate renders of all the worlds flags in SVG and PNG format.
-View all of the flags here: https://hampusborgos.github.io/country-flags/
+Feel free to fork, reuse and make recommendations to this project.

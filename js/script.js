@@ -1465,11 +1465,10 @@ const countryDetails = [
   ];
 // Array containing country details ends here 
 
-let randomPosition;
-let countryCapital;
-let answer;
-let countryCode;
-let flag;
+let randomPosition, countryCapital, answer, countryCode, flag;
+const container = document.querySelector('.container');
+const gameInfo = document.querySelector('.game-info');
+
 function renderGame() {
   countryDetails.sort(() => 0.5 - Math.random());
   randomPosition = Math.floor(Math.random() * countryDetails.length);
@@ -1480,6 +1479,7 @@ function renderGame() {
 }
 
 renderGame();
+
 let options = [answer];
 function getOptions(answer) {
   while (options.length < 4) {
@@ -1545,9 +1545,11 @@ function showQuestion(countryCapital, answer, countryCode, flag, options) {
   });
 }
 
-setTimeout(showQuestion(countryCapital, answer, countryCode, flag, options), 10);
+setTimeout(function() {
+  showQuestion(countryCapital, answer, countryCode, flag, options)
+}, 1500);
 
-let counter = 0;
+let answercounter = 0;
 let questionCounter = 0;
 
 function checkAnswer(e) {
@@ -1559,9 +1561,16 @@ function checkAnswer(e) {
   questionCounter ++;
 
   if (selected === answer) {
-    counter ++;
-    score.innerText = counter;
+    answercounter ++;
+    score.innerText = answercounter;
   }
+
+  // setTimeout(function(){
+  //   if(questionCounter === 10) {
+  //     container.style.display = "none";
+  //     gameInfo.style.display = "block";
+  //   }
+  // }, 1000);
 
   possibleSelections.forEach(possibleSelection => {
     if (possibleSelection.id != answer) {
@@ -1579,8 +1588,13 @@ function checkAnswer(e) {
   options = null;
   options = [answer];
   
-  setTimeout(function(){
+  setTimeout(function() {
     questionTab.innerHTML = "";
+    if(questionCounter === 10) {
+      container.style.display = "none";
+      gameInfo.style.display = "block";
+    }
+
     showQuestion(countryCapital, answer, countryCode, flag, options);
   }, 1500);
 }
