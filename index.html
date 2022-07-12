@@ -10,12 +10,11 @@
 <body>
   <Main>
     <div id ="score-counter">
-      <p class="score-text">CORRECT: <span id="score">0</span> / <span id="answered">20</span></p>
+      <p class="score-text">CORRECT: <span id="score">0</span> / <span id="answered">0</span></p>
     </div>
     <div class="container">
       <div class="header">
         <h1>Capital Bridge</h1>
-        <p>QUESTION 1 OF 5</p>
         <div class="question-tab" id="quest">
 
         </div>
@@ -24,15 +23,19 @@
     <div class="game-info">
       <div class="header">
         <h1 id="game-over">Game Over</h1>
-        <div style="margin-top: 150px;">
+        <h2 style="margin-top: 100px;">
+          Keep up the good work, You scored<br>
+          <span id="end-score"></span> out of <span>10</span>
+        </h2>
+        <div style="margin-top: 50px;">
           <a id="btn-play-again" type="submit" href="index.html">Play Again</a>
-          <h4>
-            Created By Abiodun Olorunda
-          </h4>
         </div>
       </div>
     </div>
   </Main>
+  <footer>
+    Created By <a href="https://www.linkedin.com/in/abiodun-olorunda-3176b6142"> Abiodun Olorunda</a>
+  </footer>
   <script src="js/script.js"></script>
 </body>
 </html>

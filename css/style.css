@@ -2,7 +2,6 @@ body {
     --bgcolor: #9baede;
     background: var(--bgcolor);
     background: linear-gradient(to right, #422ba7, var(--bgcolor));
-    /* overflow-y: hidden; */
     padding-top: 80px;
     font-family: sans-serif;
 }
@@ -11,17 +10,21 @@ body {
     padding: 5px 20px 50px;
     width: 95%;
     max-width: 500px;
-    margin: 0 auto 214px;
+    margin: 0 auto 50px;
     border-radius: 10px 10px 10px 0px;
 }
 .game-info {
-    display: block;
+    display: none;
     background: rgba(7, 7, 7, 0.72);
     padding: 5px 20px 30px;
     width: 95%;
     max-width: 500px;
     margin: 0 auto 214px;
     border-radius: 10px 10px 10px 0px;
+    font-family: 'Sirin Stencil', cursive;
+}
+.game-info span {
+    font-size: xx-large;
 }
 #btn-play-again{
     border: 1px solid #000;
@@ -167,4 +170,13 @@ label .alphabet {
 .question-tab button:hover {
     background-color: rgba(245, 155, 155, 0.767);
     border: 2px solid rgb(39, 37, 37);
+}
+footer {
+    text-align: center;
+    color: #c0b3d2;
+    font-size: large;
+}
+footer a {
+    color: #c0b3d2;
+    font-size: x-large;
 }

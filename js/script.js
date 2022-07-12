@@ -1556,7 +1556,8 @@ function checkAnswer(e) {
   const selected = e.target.getAttribute("id");
   const possibleSelections = document.querySelectorAll(".input-radio");
   const selectedInput = e.target;
-  score = document.getElementById("score");
+  let score = document.getElementById("score");
+  let endScore = document.getElementById("end-score");
   answeredQuestions = document.getElementById("answered");
   questionCounter ++;
 
@@ -1564,13 +1565,6 @@ function checkAnswer(e) {
     answercounter ++;
     score.innerText = answercounter;
   }
-
-  // setTimeout(function(){
-  //   if(questionCounter === 10) {
-  //     container.style.display = "none";
-  //     gameInfo.style.display = "block";
-  //   }
-  // }, 1000);
 
   possibleSelections.forEach(possibleSelection => {
     if (possibleSelection.id != answer) {
@@ -1593,6 +1587,7 @@ function checkAnswer(e) {
     if(questionCounter === 10) {
       container.style.display = "none";
       gameInfo.style.display = "block";
+      endScore.innerText = answercounter;
     }
 
     showQuestion(countryCapital, answer, countryCode, flag, options);

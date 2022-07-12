@@ -1,5 +1,5 @@
 # CapitalBridge
-Built with HTML, CSS, and JS. A quiz game that assist in learning country capitals, flags, and shortcode at a go.
+Built with HTML, CSS, and JS. A quiz game that assists in learning country capitals, flags, and shortcodes at a go.
 
 This repository contains renders of all the countries flags in PNG format, gotten from https://hampusborgos.github.io/country-flags/. Country Capitals, shortcode, flags were also taken from Wikipedia and google search results.
 
