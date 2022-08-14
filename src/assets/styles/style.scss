@@ -1,0 +1,165 @@
+@import '_root';
+@import '_variables.sass';
+@import 'body.sass';
+@import 'container.sass';
+@import 'navbar.sass';
+@import 'footer.sass';
+
+.game-info {
+    // display: none;
+    background: rgba(7, 7, 7, 0.72);
+    padding: 5px 20px 30px;
+    width: 95%;
+    max-width: 500px;
+    margin: 0 auto 214px;
+    border-radius: 10px 10px 10px 0px;
+    font-family: 'Sirin Stencil', cursive;
+}
+.game-info span {
+    font-size: xx-large;
+}
+#btn-play-again{
+    border: 1px solid #000;
+    border-radius: 50px;
+    width: 57%;
+    padding: 10px 20px;
+    background: rgb(247, 206, 206);
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+#game-over {
+    
+    animation: shine 2s infinite;
+}
+@keyframes shine {
+    0% {
+        color: white;
+    }
+    25% {
+        color: white;
+    }
+    50% {
+        color: rgb(0, 0, 0);
+    }
+    75% {
+        color: rgb(255, 251, 251)
+    }
+    100% {
+        color: rgb(228, 222, 222)
+    }
+}
+#score-counter {
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    width: 150px;
+    height: 7%;
+    background: rgba(0, 0, 0, 0.749);
+    color: white;
+    border: 3px solid #000;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    box-shadow: inset 2px -2px 9px #020202, inset -2px 2px 9px #d2d2d2;
+}
+.header {
+    text-align: center;
+    color: white;
+}
+.header  h1, p {
+    font-family: 'Sirin Stencil', cursive;
+}
+.question-tab {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+input {
+    background: #fff;
+}
+[type=radio] {
+    border: 0;
+    height: 0.0625rem;
+    width: 0.0625rem;
+    position: absolute;
+}
+input.answer + label {
+    background-color:  #4cf5c2;
+    color: white;
+    animation: flash 0.6s infinite;
+}
+input.wrong + label {
+    background-color:  rgba(255, 5, 5, 0.72);
+    color: white;
+}
+@keyframes flash {
+    0% {
+        background-color: #4cf5c2;
+    }
+
+    49% {
+        background-color: #4cf5c2;
+    }
+
+    50% {
+        background-color: #000;
+    }
+
+    99% {
+        background-color: #000;
+    }
+
+    100% {
+        background-color: #4cf5c2;
+    }
+}
+label {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background: white;
+    margin-bottom: 15px;
+    padding: 6px 0;
+    position: relative;
+    width: 100%;
+    color: #000;
+}
+
+label:hover .alphabet {
+    background: #000;
+    color: #fff;
+}
+
+label .alphabet {
+    border-radius: 5px;
+    border: solid 1px #000;
+    padding: .4rem .5rem .4rem;
+    width: 2.3rem;
+    margin: 0 1.3rem 0 .7rem;
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+.question-tab button {
+    background-color: rgba(248, 214, 214, 0.767);
+    padding: 11px 0;
+    color: black;
+    display: block;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 57%;
+    border: 1px solid #000;
+    border-radius: 50px;
+    transition:all 400ms;
+}
+.question-tab button:hover {
+    background-color: rgba(245, 155, 155, 0.767);
+    border: 2px solid rgb(39, 37, 37);
+}

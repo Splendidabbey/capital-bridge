@@ -1,5 +1,17 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <GameInfo :score="score" :answered="answered" :gameOver="gameOver"/>
   </div>
 </template>
+
+<script>
+import GameInfo from '@/components/GameInfo.vue'
+
+export default {
+  name: 'AboutView',
+  props: ['score', 'answered', 'gameOver'],
+  components: {
+    GameInfo
+  }
+}
+</script>

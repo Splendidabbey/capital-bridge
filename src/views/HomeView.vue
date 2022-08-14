@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+  <QuestionView :countries="countries" title="Capital Bridge" :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :valid="valid" />
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import QuestionView from '../components/QuestionView.vue'
 
 export default {
-  name: 'HomeView',
+  props: ['title', 'flag', 'countries', 'country', 'options', 'checkAnswer', 'score', 'answered', 'valid'],
   components: {
-    HelloWorld
+    QuestionView
   }
 }
 </script>
