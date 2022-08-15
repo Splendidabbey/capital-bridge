@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div id ="score-counter">
-      <p class="score-text">CORRECT: <span id="score">{{ score }}</span> / <span id="answered">{{ answered }}</span></p>
-    </div>
+    <score-counter :score="score" :answered="answered" />
     <div class="container">
       <div class="header">
         <h1>{{ title }}</h1>
@@ -16,10 +14,7 @@
             </p>
           </div>
           <div v-for="(option, index) in options" :key="index" style="width:100%;">
-            <input :id="[option]" type="radio" class="input-radio" @click="checkAnswer">
-            <label :for="[option]" class="radio-label">
-              <span class="alphabet">A</span>{{ option }}
-            </label>
+            <option-view :option="option" :checkAnswer="checkAnswer" :index="index" />
           </div>
         </div>
       </div>
@@ -28,6 +23,9 @@
 </template>
 
 <script>
+import ScoreCounter from './ScoreCounter.vue'
+import OptionView from './OptionView.vue'
+
 export default {
   name: 'QuestionView',
   props: ['title', 'flag', 'countries', 'country', 'options', 'checkAnswer', 'score', 'answered', 'valid'],
@@ -35,7 +33,9 @@ export default {
     return {
     }
   },
-  computed: {
+  components: {
+    ScoreCounter,
+    OptionView
   }
 }
 </script>
