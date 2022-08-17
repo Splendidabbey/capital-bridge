@@ -1,13 +1,5 @@
 <template>
-  <nav>
-    <router-link to="/">
-      <span>Home</span>
-    </router-link>
-    <router-link to="/about">
-      <span>About</span>
-    </router-link>
-  </nav>
-  <router-view :countries="countries" title="Capital Bridge" :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :valid="valid" />
+  <router-view title="Capital Bridge" :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevel="chooseLevel" :selectLevel="selectLevel" :gameLevel="gameLevel" />
 </template>
 
 <script>
@@ -16,6 +8,7 @@ import countries from './countries.json'
 export default {
   data () {
     return {
+      chooseLevel: true,
       gameOver: false,
       countries,
       randomPosition: null,
@@ -27,7 +20,22 @@ export default {
       optionOne: null,
       score: 0,
       answered: 0,
-      valid: null
+      valid: null,
+      quetionsAmmount: null,
+      gameLevel: [
+        {
+          name: 'easy',
+          questions: 10
+        },
+        {
+          name: 'medium',
+          questions: 20
+        },
+        {
+          name: 'hard',
+          questions: 60
+        }
+      ]
     }
   },
   methods: {
@@ -54,12 +62,11 @@ export default {
         possibleSelection.classList.remove('answer')
       })
     },
-    checkAnswer (e) {
+    checkAnswer (option) {
       if (this.valid === true) {
         this.valid = false
-        const selected = e.target.getAttribute('id')
         const possibleSelections = document.querySelectorAll('.input-radio')
-        if (selected === this.answer) {
+        if (option === this.answer) {
           this.score++
         }
         possibleSelections.forEach(possibleSelection => {
@@ -70,8 +77,22 @@ export default {
           }
         })
         this.answered++
+        if (this.answered === this.quetionsAmmount) {
+          this.gameOver = true
+          setTimeout((e) => {
+            this.$router.replace('/about')
+          }, 1000)
+        }
         setTimeout(this.renderGame, 1000)
       }
+    },
+    selectLevel (level) {
+      this.gameLevel.forEach(eachLevel => {
+        if (level.name === eachLevel.name) {
+          this.quetionsAmmount = eachLevel.questions
+        }
+      })
+      this.chooseLevel = false
     }
   },
   created () {

@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-  <QuestionView :countries="countries" title="Capital Bridge" :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :valid="valid" />
-
+  <div>
+    <score-counter :score="score" :answered="answered" />
+    <div class="container">
+      <div class="header">
+        <h1>{{ title }}</h1>
+        <select-level-view v-if="chooseLevel" :selectLevel="selectLevel" :gameLevel="gameLevel" />
+        <question-view v-else :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import QuestionView from '../components/QuestionView.vue'
+import QuestionView from '@/components/QuestionView.vue'
+import ScoreCounter from '@/components/ScoreCounter.vue'
+import SelectLevelView from '@/components/SelectLevelView.vue'
 
 export default {
-  props: ['title', 'flag', 'countries', 'country', 'options', 'checkAnswer', 'score', 'answered', 'valid'],
+  props: ['title', 'flag', 'country', 'options', 'checkAnswer', 'score', 'answered', 'selectLevel', 'chooseLevel', 'gameLevel'],
   components: {
-    QuestionView
+    QuestionView,
+    ScoreCounter,
+    SelectLevelView
   }
 }
 </script>
