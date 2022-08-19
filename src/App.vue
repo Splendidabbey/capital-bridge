@@ -3,7 +3,7 @@
   <div>
     <a href="" style="text-decoration: none">
       <h3 style="text-align: center; color: var(--bodyBackgroundFirst);">
-        Designed with by Abiodun Olorunda
+        Designed with ❤ by Abiodun Olorunda
       </h3>
     </a>
   </div>
