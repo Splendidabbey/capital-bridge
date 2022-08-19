@@ -1,5 +1,5 @@
 <template>
-  <router-view title="Capital Bridge" :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevel="chooseLevel" :selectLevel="selectLevel" :gameLevel="gameLevel" />
+  <router-view title="Capital Bridge" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevel="chooseLevel" :selectLevel="selectLevel" :gameLevel="gameLevel" :questionsAmmount="questionsAmmount" :currentQuestion="currentQuestion" />
 </template>
 
 <script>
@@ -14,14 +14,13 @@ export default {
       randomPosition: null,
       country: null,
       answer: null,
-      countryCode: null,
-      flag: null,
       options: null,
       optionOne: null,
       score: 0,
       answered: 0,
+      currentQuestion: 0,
       valid: null,
-      quetionsAmmount: null,
+      questionsAmmount: null,
       gameLevel: [
         {
           name: 'easy',
@@ -40,13 +39,12 @@ export default {
   },
   methods: {
     renderGame () {
+      this.currentQuestion++
       this.valid = true
       this.countries.sort(() => 0.5 - Math.random())
       this.randomPosition = Math.floor(Math.random() * this.countries.length)
-      this.country = countries[this.randomPosition].country
-      this.answer = this.countries[this.randomPosition].capital
-      this.countryCode = this.countries[this.randomPosition].code
-      this.flag = './png100px/' + this.countries[this.randomPosition].flag
+      this.country = countries[this.randomPosition]
+      this.answer = this.country.capital
       this.options = [this.answer]
       const possibleSelections = document.querySelectorAll('.input-radio')
       while (this.options.length < 4) {
@@ -77,7 +75,7 @@ export default {
           }
         })
         this.answered++
-        if (this.answered === this.quetionsAmmount) {
+        if (this.answered === this.questionsAmmount) {
           this.gameOver = true
           setTimeout((e) => {
             this.$router.replace('/about')
@@ -89,7 +87,7 @@ export default {
     selectLevel (level) {
       this.gameLevel.forEach(eachLevel => {
         if (level.name === eachLevel.name) {
-          this.quetionsAmmount = eachLevel.questions
+          this.questionsAmmount = eachLevel.questions
         }
       })
       this.chooseLevel = false

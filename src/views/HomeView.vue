@@ -5,7 +5,7 @@
       <div class="header">
         <h1>{{ title }}</h1>
         <select-level-view v-if="chooseLevel" :selectLevel="selectLevel" :gameLevel="gameLevel" />
-        <question-view v-else :flag="flag" :country="country" :options="options" :checkAnswer="checkAnswer" />
+        <question-view v-else :country="country" :options="options" :checkAnswer="checkAnswer" :questionsAmmount="questionsAmmount" :currentQuestion="currentQuestion" />
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@ import ScoreCounter from '@/components/ScoreCounter.vue'
 import SelectLevelView from '@/components/SelectLevelView.vue'
 
 export default {
-  props: ['title', 'flag', 'country', 'options', 'checkAnswer', 'score', 'answered', 'selectLevel', 'chooseLevel', 'gameLevel'],
+  props: ['title', 'country', 'options', 'checkAnswer', 'score', 'answered', 'selectLevel', 'chooseLevel', 'gameLevel', 'questionsAmmount', 'currentQuestion'],
   components: {
     QuestionView,
     ScoreCounter,
