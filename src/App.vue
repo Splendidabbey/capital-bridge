@@ -1,7 +1,7 @@
 <template>
   <router-view title="Capital Bridge" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevelDisplay="chooseLevelDisplayDisplay" :selectLevel="selectLevel" :gameLevel="gameLevel" :questionsAmmount="questionsAmmount" :currentQuestion="currentQuestion" />
   <div>
-    <a href="" style="text-decoration: none">
+    <a href="https://www.linkedin.com/in/abiodun-olorunda-3176b6142/" style="text-decoration: none">
       <h3 style="text-align: center; color: var(--bodyBackgroundFirst);">
         Designed with ❤ by Abiodun Olorunda
       </h3>
