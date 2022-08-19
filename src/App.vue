@@ -1,5 +1,12 @@
 <template>
-  <router-view title="Capital Bridge" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevel="chooseLevel" :selectLevel="selectLevel" :gameLevel="gameLevel" :questionsAmmount="questionsAmmount" :currentQuestion="currentQuestion" />
+  <router-view title="Capital Bridge" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevelDisplay="chooseLevelDisplayDisplay" :selectLevel="selectLevel" :gameLevel="gameLevel" :questionsAmmount="questionsAmmount" :currentQuestion="currentQuestion" />
+  <div>
+    <a href="" style="text-decoration: none">
+      <h3 style="text-align: center; color: var(--bodyBackgroundFirst);">
+        Designed with by Abiodun Olorunda
+      </h3>
+    </a>
+  </div>
 </template>
 
 <script>
@@ -8,7 +15,7 @@ import countries from './countries.json'
 export default {
   data () {
     return {
-      chooseLevel: true,
+      chooseLevelDisplay: true,
       gameOver: false,
       countries,
       randomPosition: null,
@@ -90,7 +97,7 @@ export default {
           this.questionsAmmount = eachLevel.questions
         }
       })
-      this.chooseLevel = false
+      this.chooseLevelDisplay = false
     }
   },
   created () {
