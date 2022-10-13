@@ -1,0 +1,7 @@
+{
+  "name": "capitalbridge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

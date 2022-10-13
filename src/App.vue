@@ -2,9 +2,9 @@
   <div>
     <router-view title="Capital Bridge" :country="country" :options="options" :checkAnswer="checkAnswer" :score="score" :answered="answered" :gameOver="gameOver" :chooseLevelDisplay="chooseLevelDisplay" :selectLevel="selectLevel" :gameLevel="gameLevel" :questionsAmmount="questionsAmmount" :currentQuestion="currentQuestion" />
     <div>
-      <a href="https://www.linkedin.com/in/abiodun-olorunda-3176b6142/" style="text-decoration: none">
+      <a href="https://www.linkedin.com/in/abiodun-olorunda-3176b6142/" style="text-decoration: none" target="_blank">
         <h3 style="text-align: center; color: var(--bodyBackgroundFirst);">
-          Designed and Developed with ❤ by Abiodun Olorunda
+          Designed and Developed with ❤ by <span style="text-decoration: underline">Abiodun Olorunda</span>
         </h3>
       </a>
     </div>
